@@ -1,0 +1,24 @@
+{
+  "name": "Super Simple Static Site Generator",
+  "version": "0.0.1",
+  "description": "A simple static site generator!",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "ssssg": "index.js"
+  },
+  "author": "Jim",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^7.9.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "prettier": "^2.0.5"
+  },
+  "dependencies": {
+    "markdown-it": "^11.0.1"
+  }
+}
