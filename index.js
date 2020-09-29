@@ -51,9 +51,15 @@ function writeItem(content, slug, destinationPath) {
   fs.writeFileSync(path.resolve(destinationPath, newFile), content);
 }
 
-filesToRender.forEach((file) => {
+async function applyTemplate(content) {
+  const renderFunction = await require(path.resolve(templates, "site.js"));
+  return await renderFunction(content);
+}
+
+filesToRender.forEach(async (file) => {
   // would be nice to have the pipeline operator :D
   const item = makeItem(sourceDir, file);
   const rendered = renderItem(item.itemContent);
-  writeItem(rendered, item.slug, destinationDir);
+  const renderedWithTemplate = await applyTemplate(rendered);
+  writeItem(renderedWithTemplate, item.slug, destinationDir);
 });

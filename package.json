@@ -1,5 +1,5 @@
 {
-  "name": "Super Simple Static Site Generator",
+  "name": "super-simple-static-site-generator",
   "version": "0.0.1",
   "description": "A simple static site generator!",
   "main": "index.js",
